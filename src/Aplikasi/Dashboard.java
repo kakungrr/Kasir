@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package Aplikasi;
 
@@ -23,10 +19,7 @@ import javax.swing.table.DefaultTableModel;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.view.JasperViewer;
 
-/**
- *
- * @author Les Cules
- */
+
 public class Dashboard extends javax.swing.JFrame {
 
     Statement stt;
@@ -57,7 +50,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         new Panel.PanelImage();
         jPanel1 = new javax.swing.JPanel();
-        makanan = new javax.swing.JPanel();
+        jPanel2 = new Panel.PanelImage();
+        makanan = new Panel.PanelImage();
         btn_simpan = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
@@ -73,7 +67,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         txtketerangan = new javax.swing.JTextArea();
-        transaksi = new javax.swing.JPanel();
+        transaksi = new Panel.PanelImage();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -113,11 +107,14 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel1.setPreferredSize(new java.awt.Dimension(600, 500));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 510));
+
         getContentPane().add(jPanel1, "card3");
 
         makanan.setPreferredSize(new java.awt.Dimension(600, 500));
         makanan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btn_simpan.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btn_simpan.setText("Simpan");
         btn_simpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,10 +123,11 @@ public class Dashboard extends javax.swing.JFrame {
         });
         makanan.add(btn_simpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Tekton Pro", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Trajan Pro 3", 3, 24)); // NOI18N
         jLabel1.setText("FORM PAKET MAKANAN");
-        makanan.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(193, 34, -1, -1));
+        makanan.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
 
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton2.setText("Ubah");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,6 +136,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
         makanan.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 66, -1));
 
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton3.setText("Hapus");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,6 +145,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
         makanan.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setText("Harga");
         makanan.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
 
@@ -154,11 +154,13 @@ public class Dashboard extends javax.swing.JFrame {
                 txtidmakananActionPerformed(evt);
             }
         });
-        makanan.add(txtidmakanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(331, 110, 220, 30));
+        makanan.add(txtidmakanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(291, 110, 260, 30));
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setText("ID Paket Makanan");
         makanan.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 113, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setText("Nama Paket Makanan");
         makanan.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 141, -1, -1));
 
@@ -187,9 +189,10 @@ public class Dashboard extends javax.swing.JFrame {
                 txthargaKeyTyped(evt);
             }
         });
-        makanan.add(txtharga, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, 220, 30));
-        makanan.add(txtnamapaket, new org.netbeans.lib.awtextra.AbsoluteConstraints(331, 144, 220, -1));
+        makanan.add(txtharga, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 260, 30));
+        makanan.add(txtnamapaket, new org.netbeans.lib.awtextra.AbsoluteConstraints(291, 144, 260, -1));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setText("Keterangan");
         makanan.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 182, -1, -1));
 
@@ -197,28 +200,34 @@ public class Dashboard extends javax.swing.JFrame {
         txtketerangan.setRows(5);
         jScrollPane3.setViewportView(txtketerangan);
 
-        makanan.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 176, 220, 70));
+        makanan.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 260, 70));
 
         getContentPane().add(makanan, "card2");
 
         transaksi.setPreferredSize(new java.awt.Dimension(600, 500));
         transaksi.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel12.setText("Tanggal Transaksi");
         transaksi.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, -1));
 
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel13.setText("No Transaksi");
         transaksi.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, -1));
 
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel14.setText("Kode Paket Makanan");
         transaksi.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, -1));
 
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel15.setText("Nama Paket");
         transaksi.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
 
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel16.setText("Harga");
         transaksi.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, -1, -1));
 
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel17.setText("Jumlah");
         transaksi.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, -1));
 
@@ -228,20 +237,20 @@ public class Dashboard extends javax.swing.JFrame {
                 tgl_transaksiActionPerformed(evt);
             }
         });
-        transaksi.add(tgl_transaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 250, -1));
+        transaksi.add(tgl_transaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 260, -1));
 
         txt_no_transaksi.setEditable(false);
-        transaksi.add(txt_no_transaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 93, -1));
+        transaksi.add(txt_no_transaksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 130, -1));
 
         txt_nama_paket.setEnabled(false);
-        transaksi.add(txt_nama_paket, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 250, -1));
+        transaksi.add(txt_nama_paket, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 260, -1));
 
         cmb_kode.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cmb_kodeItemStateChanged(evt);
             }
         });
-        transaksi.add(cmb_kode, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 250, -1));
+        transaksi.add(cmb_kode, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 260, -1));
 
         txt_jumlah_t.setText("1");
         txt_jumlah_t.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -249,18 +258,19 @@ public class Dashboard extends javax.swing.JFrame {
                 txt_jumlah_tKeyTyped(evt);
             }
         });
-        transaksi.add(txt_jumlah_t, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 250, -1));
+        transaksi.add(txt_jumlah_t, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 260, -1));
 
         txt_harga_t.setEnabled(false);
-        transaksi.add(txt_harga_t, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 250, -1));
+        transaksi.add(txt_harga_t, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 260, -1));
 
+        jButton7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton7.setText("Beli");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
             }
         });
-        transaksi.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, -1, -1));
+        transaksi.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 70, -1));
 
         tbl_transaksi.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -278,45 +288,50 @@ public class Dashboard extends javax.swing.JFrame {
         transaksi.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 495, 95));
         transaksi.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 420, 10));
 
-        jLabel6.setFont(new java.awt.Font("Tekton Pro", 0, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Trajan Pro 3", 3, 24)); // NOI18N
         jLabel6.setText("FORM TRANSAKSI MAKANAN");
-        transaksi.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, -1, -1));
+        transaksi.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, -1));
 
-        jButton4.setText("Transaksi Selanjutnya");
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton4.setText("Transaksi Baru");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        transaksi.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, 150, -1));
+        transaksi.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(393, 130, -1, -1));
 
         txt_id_kasir.setEditable(false);
-        transaksi.add(txt_id_kasir, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 50, -1));
+        transaksi.add(txt_id_kasir, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 50, 30));
 
         txt_total_semua.setEditable(false);
-        transaksi.add(txt_total_semua, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 460, 142, -1));
+        transaksi.add(txt_total_semua, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, 180, 30));
 
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel18.setText("Total");
-        transaksi.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 460, -1, -1));
+        transaksi.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, -1, -1));
 
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton5.setText("Hapus");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-        transaksi.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, -1, -1));
+        transaksi.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 320, 70, -1));
 
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton6.setText("Cetak");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
-        transaksi.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, -1, -1));
+        transaksi.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 460, 70, 30));
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel7.setText("Id Admin");
-        transaksi.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, -1, -1));
+        transaksi.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
         getContentPane().add(transaksi, "card4");
 
@@ -566,7 +581,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         Connection con = koneksi.getConnection();
-            String NamaFile = "/com/restoran/report/Struk_Pembayaran.jasper";
+            String NamaFile = "/Report/Struk.jasper";
             HashMap hash = new HashMap();
         try {
             hash.put("idtransaksi", txt_no_transaksi.getText());
@@ -577,7 +592,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         Connection con = koneksi.getConnection();
-            String NamaFile = "/com/restoran/report/laporan_penjualan.jasper";
+            String NamaFile = "/Report/Laporan.jasper";
             HashMap hash = new HashMap();
         try {
             hash.put("idkasir", txt_id_kasir.getText());
@@ -783,6 +798,7 @@ evt.consume();
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

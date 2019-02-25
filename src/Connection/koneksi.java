@@ -1,15 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Connection;
 
 import java.sql.*;
 import javax.swing.JOptionPane;
-/**
- *
- * @author Aziz_YS
- */
+
 public class koneksi {
     private static Connection con;
     public koneksi(){

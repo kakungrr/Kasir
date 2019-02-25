@@ -11,15 +11,15 @@ import javax.swing.*;
  * @author Kakung Rama Rahmuda
  */
 public class PanelImage extends JPanel{
-    Image Gambar;
+    Image Image;
     public PanelImage(){
-        Gambar=new ImageIcon(getClass().getResource("/Gambar/revisi1.png")).getImage();
+        Image=new ImageIcon(getClass().getResource("/Image/revisi1.png")).getImage();
      }
     @Override
     protected void paintComponent (Graphics g){
         super.paintComponent (g);
         Graphics2D gd=(Graphics2D)g.create();
-        gd.drawImage(Gambar, 0, 0, getWidth(), getHeight(), null);
+        gd.drawImage(Image, 0, 0, getWidth(), getHeight(), null);
         gd.dispose();
     }
 }
